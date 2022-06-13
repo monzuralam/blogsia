@@ -76,8 +76,13 @@ blockquote {
   color: #6c757d;
 }
 
+.custom-logo{
+  max-width: 300px;
+  max-height: 100px;
+}
+
 #mainNav {
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   left: 0;
   right: 0;
