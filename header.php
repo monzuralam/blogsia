@@ -66,10 +66,12 @@
 		</nav>
 	</header>
 	<?php 
+		global $posts;
+		$blogsia_featured_img_url = get_the_post_thumbnail_url($posts->ID,'full'); 
 		if( is_front_page() ){
 	?>
 	<!-- Page Header-->
-	<section class="hero-section masthead" style="background-image: url('assets/img/home-bg.jpg')">
+	<section class="hero-section masthead" style="background-image: url('<?php echo esc_url($blogsia_featured_img_url); ?>')">
 		<div class="container position-relative px-4 px-lg-5">
 			<div class="row gx-4 gx-lg-5 justify-content-center">
 				<div class="col-md-10 col-lg-8 col-xl-7">
@@ -84,7 +86,7 @@
 	<?php 
 	}else{
 	?>
-	<section class="hero-section masthead" style="background-image: url('assets/img/home-bg.jpg')">
+	<section class="hero-section masthead" style="background-image: url('<?php echo esc_url($blogsia_featured_img_url); ?>')">
 		<div class="container position-relative px-4 px-lg-5">
 			<div class="row gx-4 gx-lg-5 justify-content-center">
 				<div class="col-md-10 col-lg-8 col-xl-7">
