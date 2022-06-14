@@ -16,7 +16,7 @@
 				<div class="col-md-10 col-lg-8 col-xl-7">
 					<div class="text-center text-muted">
 						<?php
-							$current_year = the_date('Y', null, null, false);
+							$current_year = date('Y');
 							printf( esc_html__( 'Copyright %s © Blogsia by %s. All Rights Reserved.', 'blogsia'), esc_html($current_year), '<a href="https://profile.wordpress.org/monzuralam">Monzur Alam</a>' );
 						?>
 					</div>
