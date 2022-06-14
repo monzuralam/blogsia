@@ -84,6 +84,22 @@
 		</div>
 	</section>
 	<?php 
+	} elseif( !is_single() && !is_archive() && !is_page() && !is_front_page() ){
+	?>
+	<!-- Page Header-->
+	<section class="hero-section masthead">
+		<div class="container position-relative px-4 px-lg-5">
+			<div class="row gx-4 gx-lg-5 justify-content-center">
+				<div class="col-md-10 col-lg-8 col-xl-7">
+					<div class="site-heading">
+						<h1><?php echo esc_html__( 'Blog', 'blogsia' ); ?></h1>
+						<span class="subheading"><?php echo esc_html__( get_bloginfo( 'description'), 'blogsia' ); ?></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<?php
 	}else{
 	?>
 	<section class="hero-section masthead" style="background-image: url('<?php echo esc_url($blogsia_featured_img_url); ?>')">
