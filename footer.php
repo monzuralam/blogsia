@@ -10,25 +10,23 @@
  */
 
 ?>
-
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'blogsia' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'blogsia' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'blogsia' ), 'blogsia', '<a href="https://profile.wordpress.org/monzuralam">Monzur Alam</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+	<footer class="border-top">
+		<div class="container px-4 px-lg-5">
+			<div class="row gx-4 gx-lg-5 justify-content-center">
+				<div class="col-md-10 col-lg-8 col-xl-7">
+					<div class="text-center text-muted">
+						<?php
+							$current_year = the_date('Y', null, null, false);
+							printf( esc_html__( 'Copyright %s © Blogsia by %s. All Rights Reserved.', 'blogsia'), esc_html($current_year), '<a href="https://profile.wordpress.org/monzuralam">Monzur Alam</a>' );
+						?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
 </div><!-- #page -->
 
-<?php wp_footer(); ?>
+<?php wp_footer();?>
 
 </body>
 </html>
