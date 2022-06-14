@@ -73,12 +73,8 @@ function blogsia_setup() {
 	// Set up the WordPress core custom background feature.
 	add_theme_support(
 		'custom-background',
-		apply_filters(
-			'blogsia_custom_background_args',
-			array(
-				'default-color' => 'ffffff',
-				'default-image' => '',
-			)
+		array(
+			'default-color' => 'ffffff',
 		)
 	);
 
@@ -99,6 +95,19 @@ function blogsia_setup() {
 			'flex-height' => true,
 		)
 	);
+
+	// Add support for full and wide align images.
+	add_theme_support( 'align-wide' );
+
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
+
+	// Add support for editor style
+	add_editor_style( 'assets/css/editor-style.css' );
+
+	// Add support for block style
+	add_theme_support( "wp-block-styles" );
+
 }
 add_action( 'after_setup_theme', 'blogsia_setup' );
 
