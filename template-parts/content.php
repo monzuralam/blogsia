@@ -10,17 +10,20 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php
+		if( is_single() ):
+
+			the_content();
+
+		else: 
+	?>
 	<!-- Post preview-->
 	<div class="post-preview">
 		<a href="<?php esc_url( the_permalink()) ; ?>">
 			<h2 class="post-title"><?php the_title(); ?></h2>
 			<p class="post-subtitle">
 				<?php 
-					if( is_single() ){
-						the_content();
-					}else{
-						echo get_the_excerpt();
-					}
+					echo get_the_excerpt();
 				?>
 			</p>
 		</a>
@@ -45,4 +48,5 @@
 	</div>
 	<!-- Divider-->
 	<hr class="my-4" />
+	<?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->
