@@ -10,54 +10,39 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				blogsia_posted_on();
-				blogsia_posted_by();
+	<!-- Post preview-->
+	<div class="post-preview">
+		<a href="<?php esc_url( the_permalink()) ; ?>">
+			<h2 class="post-title"><?php the_title(); ?></h2>
+			<p class="post-subtitle">
+				<?php 
+					if( is_single() ){
+						the_content();
+					}else{
+						echo get_the_excerpt();
+					}
 				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
-	<?php blogsia_post_thumbnail(); ?>
-
-	<div class="entry-content">
-		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'blogsia' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			)
-		);
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'blogsia' ),
-				'after'  => '</div>',
-			)
-		);
+			</p>
+		</a>
+		<?php 
+			if ( 'post' === get_post_type() ) {
 		?>
-	</div><!-- .entry-content -->
+		<p class="post-meta">
+			<?php 
+				printf(
+					/* translators: %s: post author. */
+					esc_html_x( 'Posted by %s ', 'post author', 'blogsia' ),
+					'<a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a>'
+				);
 
-	<footer class="entry-footer">
-		<?php blogsia_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+				printf(
+					/* translators: %s: post date. */
+					esc_html_x( 'on %s', 'post date', 'blogsia' ), get_the_date('M d, Y')
+				);
+			?>
+		</p>
+		<?php } ?>
+	</div>
+	<!-- Divider-->
+	<hr class="my-4" />
 </article><!-- #post-<?php the_ID(); ?> -->

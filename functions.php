@@ -187,3 +187,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Register Custom Navigation Walker
  */
 require get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
+
+/**
+ * Link Attributes
+ */
+function blogsia_posts_link_attributes() {
+	return 'class="btn btn-primary text-uppercase text-black"';
+}
+add_filter('next_posts_link_attributes', 'blogsia_posts_link_attributes');
+add_filter('previous_posts_link_attributes', 'blogsia_posts_link_attributes');
