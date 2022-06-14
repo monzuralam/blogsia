@@ -10,26 +10,35 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+	<!-- Post preview-->
+	<div class="post-preview">
+		<a href="<?php esc_url( the_permalink()) ; ?>">
+			<h2 class="post-title"><?php the_title(); ?></h2>
+			<p class="post-subtitle">
+				<?php 
+					echo get_the_excerpt();
+				?>
+			</p>
+		</a>
+		<?php 
+			if ( 'post' === get_post_type() ) {
+		?>
+		<p class="post-meta">
+			<?php 
+				printf(
+					/* translators: %s: post author. */
+					esc_html_x( 'Posted by %s ', 'post author', 'blogsia' ),
+					'<a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a>'
+				);
 
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php
-			blogsia_posted_on();
-			blogsia_posted_by();
+				printf(
+					/* translators: %s: post date. */
+					esc_html_x( 'on %s', 'post date', 'blogsia' ), get_the_date('M d, Y')
+				);
 			?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
-	<?php blogsia_post_thumbnail(); ?>
-
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-
-	<footer class="entry-footer">
-		<?php blogsia_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+		</p>
+		<?php } ?>
+	</div>
+	<!-- Divider-->
+	<hr class="my-4" />
 </article><!-- #post-<?php the_ID(); ?> -->
