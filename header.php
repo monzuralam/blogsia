@@ -108,8 +108,8 @@
 			<div class="row gx-4 gx-lg-5 justify-content-center">
 				<div class="col-md-10 col-lg-8 col-xl-7">
 					<div class="site-heading">
-						<h1><?php echo __( get_the_archive_title() ); ?></h1>
-						<span class="subheading"><?php echo __( get_the_archive_description(), 'blogsia' ); ?></span>
+						<h1><?php echo esc_html__( get_the_archive_title() ); ?></h1>
+						<span class="subheading"><?php echo esc_html__( get_the_archive_description(), 'blogsia' ); ?></span>
 					</div>
 				</div>
 			</div>
@@ -139,7 +139,7 @@
 					<div class="row gx-4 gx-lg-5 justify-content-center">
 						<div class="col-md-10 col-lg-8 col-xl-7">
 							<div class="site-heading">
-								<h1><?php echo __( '404', 'blogsia' ); ?></h1>
+								<h1><?php esc_html_e( '404', 'blogsia' ); ?></h1>
 							</div>
 						</div>
 					</div>
@@ -153,8 +153,10 @@
 			<div class="row gx-4 gx-lg-5 justify-content-center">
 				<div class="col-md-10 col-lg-8 col-xl-7">
 					<div class="site-heading">
-						<h1><?php echo esc_html__(  the_title(), 'blogsia' ); ?></h1>
-						<span class="subheading"><?php echo esc_html__( the_excerpt(), 'blogsia' ); ?></span>
+						<h1><?php esc_html_e(  get_the_title(), 'blogsia' ); ?></h1>
+						<span class="subheading">
+							<?php esc_html_e( get_the_excerpt(), 'blogsia' ); ?>
+						</span>
 					</div>
 				</div>
 			</div>
