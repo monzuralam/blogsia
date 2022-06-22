@@ -50,15 +50,15 @@
 				<?php
 					wp_nav_menu(
 						array(
-							'menu_id'        => 'primary-menu',
+							'menu_id'        	=> 'primary-menu',
 							'container'         => "div",
 							'container_class'   => "collapse navbar-collapse",
 							'container_id'      => "navbarResponsive",
-							'menu_class'      => "navbar-nav ml-auto py-4 py-lg-0",
-							'depth'       => "3",
+							'menu_class'     	=> "navbar-nav ml-auto py-4 py-lg-0",
+							'depth'       		=> 	"2",
 							'fallback_cb'       => "WP_Bootstrap_Navwalker::fallback",
-							'walker'       => new WP_Bootstrap_Navwalker(),
-							'theme_location' => 'menu-1',
+							'walker'       		=> new WP_Bootstrap_Navwalker(),
+							'theme_location' 	=> 'menu-1',
 						)
 					);
 				?>
