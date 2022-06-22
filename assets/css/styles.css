@@ -80,10 +80,11 @@ blockquote {
   max-width: 300px;
   max-height: 100px;
 }
-
+/* Menu
+--------------------------------------------- */
 #mainNav {
   position: absolute;
-  top: 0;
+  top: 30px;
   left: 0;
   right: 0;
   z-index: 1030;
