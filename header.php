@@ -36,7 +36,7 @@
 						}
 					}else{
 						echo '<a class="navbar-brand" href="'. esc_url(home_url()).'">';
-						echo __( get_bloginfo( 'name' ), 'blogsia' );
+						echo get_bloginfo( 'name' );
 						echo '</a>';
 					}
 					
