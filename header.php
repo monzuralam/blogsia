@@ -74,8 +74,8 @@
 			<div class="row gx-4 gx-lg-5 justify-content-center">
 				<div class="col-md-10 col-lg-8 col-xl-7">
 					<div class="site-heading">
-						<h1><?php echo __( get_bloginfo( 'name' ), 'blogsia' ); ?></h1>
-						<span class="subheading"><?php echo __( get_bloginfo( 'description' ), 'blogsia' ); ?></span>
+						<h1><?php echo get_bloginfo( 'name' ); ?></h1>
+						<span class="subheading"><?php echo get_bloginfo( 'description' ); ?></span>
 					</div>
 				</div>
 			</div>
