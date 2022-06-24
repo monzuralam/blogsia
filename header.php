@@ -36,14 +36,14 @@
 						}
 					}else{
 						echo '<a class="navbar-brand" href="'. esc_url(home_url()).'">';
-						_e( get_bloginfo( 'name' ), 'blogsia' ) ;
+						echo __( get_bloginfo( 'name' ), 'blogsia' );
 						echo '</a>';
 					}
 					
 				?>
 			
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-					<?php _e( 'Menu', 'blogsia' ); ?>	
+					<?php echo __( 'Menu', 'blogsia' ); ?>	
 					<i class="fas fa-bars"></i>
 				</button>
 
@@ -74,8 +74,8 @@
 			<div class="row gx-4 gx-lg-5 justify-content-center">
 				<div class="col-md-10 col-lg-8 col-xl-7">
 					<div class="site-heading">
-						<h1><?php _e( get_bloginfo( 'name' ), 'blogsia' ); ?></h1>
-						<span class="subheading"><?php _e( get_bloginfo( 'description' ), 'blogsia' ); ?></span>
+						<h1><?php echo __( get_bloginfo( 'name' ), 'blogsia' ); ?></h1>
+						<span class="subheading"><?php echo __( get_bloginfo( 'description' ), 'blogsia' ); ?></span>
 					</div>
 				</div>
 			</div>
@@ -90,7 +90,7 @@
 			<div class="row gx-4 gx-lg-5 justify-content-center">
 				<div class="col-md-10 col-lg-8 col-xl-7">
 					<div class="site-heading">
-						<h1><?php _e( 'Blog', 'blogsia' ); ?></h1>
+						<h1><?php echo __( 'Blog', 'blogsia' ); ?></h1>
 					</div>
 				</div>
 			</div>
@@ -121,7 +121,7 @@
 				<div class="row gx-4 gx-lg-5 justify-content-center">
 					<div class="col-md-10 col-lg-8 col-xl-7">
 						<div class="site-heading">
-							<h1><?php _e( 'Search', 'blogsia' ); ?></h1>
+							<h1><?php echo __( 'Search', 'blogsia' ); ?></h1>
 						</div>
 					</div>
 				</div>
@@ -152,7 +152,7 @@
 			<div class="row gx-4 gx-lg-5 justify-content-center">
 				<div class="col-md-10 col-lg-8 col-xl-7">
 					<div class="site-heading">
-						<h1><?php _e( '404', 'blogsia' ); ?></h1>
+						<h1><?php echo __( '404', 'blogsia' ); ?></h1>
 					</div>
 				</div>
 			</div>
