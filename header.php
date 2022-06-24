@@ -36,14 +36,14 @@
 						}
 					}else{
 						echo '<a class="navbar-brand" href="'. esc_url(home_url()).'">';
-						echo esc_html__( get_bloginfo('name'), 'blogsia' ) ;
+						_e( get_bloginfo( 'name' ), 'blogsia' ) ;
 						echo '</a>';
 					}
 					
 				?>
 			
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-					<?php echo esc_html__( 'Menu', 'blogsia' ); ?>	
+					<?php _e( 'Menu', 'blogsia' ); ?>	
 					<i class="fas fa-bars"></i>
 				</button>
 
@@ -66,18 +66,16 @@
 		</nav>
 	</header>
 	<?php 
-		global $posts;
-		$blogsia_featured_img_url = get_the_post_thumbnail_url($posts->ID,'full'); 
 		if( is_front_page() ){
 	?>
 	<!-- Page Header-->
-	<section class="hero-section masthead" style="background-image: url('<?php echo esc_url($blogsia_featured_img_url); ?>')">
+	<section class="hero-section masthead">
 		<div class="container position-relative px-4 px-lg-5">
 			<div class="row gx-4 gx-lg-5 justify-content-center">
 				<div class="col-md-10 col-lg-8 col-xl-7">
 					<div class="site-heading">
-						<h1><?php echo esc_html__( get_bloginfo( 'name' ), 'blogsia' ); ?></h1>
-						<span class="subheading"><?php echo esc_html__( get_bloginfo( 'description'), 'blogsia' ); ?></span>
+						<h1><?php _e( get_bloginfo( 'name' ), 'blogsia' ); ?></h1>
+						<span class="subheading"><?php _e( get_bloginfo( 'description' ), 'blogsia' ); ?></span>
 					</div>
 				</div>
 			</div>
@@ -92,8 +90,7 @@
 			<div class="row gx-4 gx-lg-5 justify-content-center">
 				<div class="col-md-10 col-lg-8 col-xl-7">
 					<div class="site-heading">
-						<h1><?php echo esc_html__( 'Blog', 'blogsia' ); ?></h1>
-						<span class="subheading"><?php echo esc_html__( get_bloginfo( 'description'), 'blogsia' ); ?></span>
+						<h1><?php _e( 'Blog', 'blogsia' ); ?></h1>
 					</div>
 				</div>
 			</div>
@@ -108,8 +105,8 @@
 			<div class="row gx-4 gx-lg-5 justify-content-center">
 				<div class="col-md-10 col-lg-8 col-xl-7">
 					<div class="site-heading">
-						<h1><?php echo esc_html__( get_the_archive_title() ); ?></h1>
-						<span class="subheading"><?php echo esc_html__( get_the_archive_description(), 'blogsia' ); ?></span>
+						<h1><?php the_archive_title(); ?></h1>
+						<span class="subheading"><?php the_archive_description(); ?></span>
 					</div>
 				</div>
 			</div>
@@ -124,38 +121,23 @@
 				<div class="row gx-4 gx-lg-5 justify-content-center">
 					<div class="col-md-10 col-lg-8 col-xl-7">
 						<div class="site-heading">
-							<h1><?php printf( esc_html__( 'Search Results for: %s', 'blogsia' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+							<h1><?php _e( 'Search', 'blogsia' ); ?></h1>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 	<?php
-	}elseif( is_404() ){
-		?>
-			<!-- Page Header-->
-			<section class="hero-section masthead">
-				<div class="container position-relative px-4 px-lg-5">
-					<div class="row gx-4 gx-lg-5 justify-content-center">
-						<div class="col-md-10 col-lg-8 col-xl-7">
-							<div class="site-heading">
-								<h1><?php esc_html_e( '404', 'blogsia' ); ?></h1>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-		<?php
-	}else{
+	}elseif( is_single() || is_page() ){
 	?>
-	<section class="hero-section masthead" style="background-image: url('<?php echo esc_url($blogsia_featured_img_url); ?>')">
+	<section class="hero-section masthead">
 		<div class="container position-relative px-4 px-lg-5">
 			<div class="row gx-4 gx-lg-5 justify-content-center">
 				<div class="col-md-10 col-lg-8 col-xl-7">
 					<div class="site-heading">
-						<h1><?php esc_html_e(  get_the_title(), 'blogsia' ); ?></h1>
+						<h1><?php the_title(); ?></h1>
 						<span class="subheading">
-							<?php esc_html_e( get_the_excerpt(), 'blogsia' ); ?>
+							<?php the_excerpt(); ?>
 						</span>
 					</div>
 				</div>
@@ -163,4 +145,18 @@
 		</div>
 	</section>
 	<?php 
+	}elseif( is_404() ){
+	?>
+	<section class="hero-section masthead">
+		<div class="container position-relative px-4 px-lg-5">
+			<div class="row gx-4 gx-lg-5 justify-content-center">
+				<div class="col-md-10 col-lg-8 col-xl-7">
+					<div class="site-heading">
+						<h1><?php _e( '404', 'blogsia' ); ?></h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<?php
 	}
