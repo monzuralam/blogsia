@@ -149,6 +149,7 @@ add_action( 'widgets_init', 'blogsia_widgets_init' );
 function blogsia_scripts() {
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/all.min.css', array(), BLOGSIA_VERSION, 'all' );
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), BLOGSIA_VERSION, 'all' );
+	wp_enqueue_style( 'normalize', get_template_directory_uri() . '/assets/css/normalize.css', array(), BLOGSIA_VERSION, 'all' );
 	wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/css/styles.css', array(), BLOGSIA_VERSION, 'all' );
 	wp_enqueue_style( 'blogsia-style', get_stylesheet_uri(), array(), BLOGSIA_VERSION, 'all' );
 	wp_style_add_data( 'blogsia-style', 'rtl', 'replace' );
