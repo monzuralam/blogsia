@@ -8,45 +8,37 @@
  */
 
 ?>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php
-		if( is_single() ):
-
-			the_content();
-
-		else: 
-	?>
-	<!-- Post preview-->
-	<div class="post-preview">
-		<a href="<?php esc_url( the_permalink()) ; ?>">
-			<h2 class="post-title"><?php the_title(); ?></h2>
-			<p class="post-subtitle">
-				<?php 
-					echo get_the_excerpt();
-				?>
-			</p>
-		</a>
-		<?php 
-			if ( 'post' === get_post_type() ) {
-		?>
-		<p class="post-meta">
-			<?php 
-				printf(
-					/* translators: %s: post author. */
-					esc_html_x( 'Posted by %s ', 'post author', 'blogsia' ),
-					'<a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a>'
-				);
-
-				printf(
-					/* translators: %s: post date. */
-					esc_html_x( 'on %s', 'post date', 'blogsia' ), get_the_date('M d, Y')
-				);
-			?>
-		</p>
-		<?php } ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'mb-4' ); ?>>
+	<div class="post-card">
+		<div class="post-thumb">
+			<?php the_post_thumbnail( 'full', array( 'class'=>'img-fluid' ) ); ?>
+		</div>
+		<div class="post-content">
+			<div class="post-content">
+				<div class="entry-meta">
+					<span class="post-cat"><?php the_category(', '); // Separated by commas ?></span>
+				</div>
+				<div class="post-card-content">
+					<h2 class="post-title">
+						<a href="<?php esc_url( the_permalink()) ; ?>"><?php the_title(); ?></a>
+					</h2>
+					<div class="post-excerpt text-muted">
+						<p>
+							<?php the_excerpt(); ?>
+						</p>
+					</div>
+					<div class="entry-meta text-uppercase">
+						<span class="post-on">
+							<?php 
+								printf(
+									/* translators: %s: post date. */
+									esc_html_x( 'on %s', 'post date', 'blogsia' ), get_the_date('M d, Y')
+								);
+							?>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-	<!-- Divider-->
-	<hr class="my-4" />
-	<?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->
