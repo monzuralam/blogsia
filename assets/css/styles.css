@@ -381,3 +381,11 @@ footer {
   justify-content: space-between;
   flex-direction: row;
 }
+
+.nav-links .nav-previous {
+  background: #000;
+}
+
+.nav-links .nav-previous a {
+  color: #fff;
+}
