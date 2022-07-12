@@ -15,9 +15,9 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main mb-4">
-		<div class="container px-4 px-lg-5">
-			<div class="row gx-4 gx-lg-5 justify-content-center">
+	<main id="primary" class="site-main">
+		<div class="container">
+			<div class="row justify-content-center">
 				<div class="col-md-12 col-lg-12 col-xl-12">
 					<?php
 
