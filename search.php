@@ -11,9 +11,17 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-		<div class="container px-4 px-lg-5">
-			<div class="row gx-4 gx-lg-5 justify-content-center">
-				<div class="col-md-10 col-lg-8 col-xl-7">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-12 col-lg-12 col-xl-12">
+					<header class="search-header">
+						<h1 class="entry-search-title">
+							<?php
+							/* translators: %s: search query. */
+							printf( esc_html__( 'Search Results for: %s', 'blogsia' ), '<span>' . get_search_query() . '</span>' );
+							?>
+						</h1>
+					</header><!-- .page-header -->
 					<?php if ( have_posts() ) : 
 					
 						/* Start the Loop */
