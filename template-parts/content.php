@@ -47,7 +47,7 @@
 					<span class="comments">
 						<i class="fa fa-comments"></i>
 						<?php
-							echo esc_html_e( get_comments_number( get_the_ID() ), 'blogsia' );
+							echo get_comments_number( get_the_ID() );
 						?>
 					</span>
 				</div>
