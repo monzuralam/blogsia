@@ -11,14 +11,14 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-		<div class="container px-4 px-lg-5">
-				<div class="row gx-4 gx-lg-5 justify-content-center">
-					<div class="col-md-10 col-lg-8 col-xl-7">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-9 col-lg-8 col-xl-8">
 					<?php
 						while ( have_posts() ) :
 							the_post();
 
-							get_template_part( 'template-parts/content', get_post_type() );
+							get_template_part( 'template-parts/content', 'single' );
 
 							the_post_navigation(
 								array(
@@ -34,7 +34,10 @@ get_header();
 
 						endwhile; // End of the loop.
 					?>
-				</div>
+				</div> <!-- .col-md-9 .col-lg-8 .col-xl-8 -->
+				<?php
+					get_sidebar();
+				?>
 			</div>
 		</div>
 	</main><!-- #main -->
