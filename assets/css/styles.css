@@ -80,6 +80,13 @@ blockquote {
   max-width: 300px;
   max-height: 100px;
 }
+/**
+* Main
+**/
+main{
+  margin: 80px 0;
+}
+
 /***
 * Header
 ***/
@@ -398,5 +405,5 @@ footer {
 * Page
 **/
 .entry-header{
-  margin: 24px 0;
+  margin: 0 0 24px 0;
 }
