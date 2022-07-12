@@ -11,9 +11,12 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-		<div class="container px-4 px-lg-5">
-			<div class="row gx-4 gx-lg-5 justify-content-center">
-				<div class="col-md-10 col-lg-8 col-xl-7">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-12">
+					<h1 class="archive-entry-title"><?php the_archive_title(); ?></h1>
+				</div>
+				<div class="col-md-9 col-lg-8 col-xl-8">
 					<?php if ( have_posts() ) : 
 
 						/* Start the Loop */
@@ -38,9 +41,9 @@ get_header();
 					endif;
 					?>
 				</div>
-				<div class="col-md-2 col-lg-4 col-xl-5">
-					<?php get_sidebar(); ?>
-				</div>
+
+				<?php get_sidebar(); ?>
+
 			</div>
 		</div>
 	</main><!-- #main -->
