@@ -386,3 +386,10 @@ footer {
 .nav-links .nav-previous a {
   color: #fff;
 }
+
+/**
+* Page
+**/
+.entry-header{
+  margin: 24px 0;
+}
