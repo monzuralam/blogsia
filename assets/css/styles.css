@@ -387,17 +387,18 @@ footer {
   flex-direction: row-reverse;
 }
 
+.posts-navigation .nav-links{
+  flex-direction: row;
+}
+
 .single .nav-links {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
 }
 
-.nav-links .nav-previous {
+.nav-links .nav-previous a, .nav-links .nav-next a {
   background: #000;
-}
-
-.nav-links .nav-previous a {
   color: #fff;
 }
 
@@ -412,5 +413,12 @@ footer {
 * Archive 
 **/
 .archive-entry-title{
+  margin-bottom: 40px;
+}
+
+/**
+* Search
+**/
+.entry-search-title {
   margin-bottom: 40px;
 }
