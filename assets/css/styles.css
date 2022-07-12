@@ -80,6 +80,13 @@ blockquote {
   max-width: 300px;
   max-height: 100px;
 }
+/***
+* Header
+***/
+header#masthead {
+  border-bottom: 1px solid #eee;
+}
+
 /* Menu
 --------------------------------------------- */
 #mainNav {
