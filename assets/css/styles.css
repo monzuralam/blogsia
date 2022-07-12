@@ -407,3 +407,10 @@ footer {
 .entry-header{
   margin: 0 0 24px 0;
 }
+
+/**
+* Archive 
+**/
+.archive-entry-title{
+  margin-bottom: 40px;
+}
