@@ -482,3 +482,18 @@ footer {
   font-size: 28px;
   font-weight: 700;
 }
+
+/***
+* Underline Link
+**/
+.post-content a {
+  text-decoration: underline;
+}
+
+.post-content .post-card-content .post-title a {
+  text-decoration: none;
+}
+
+.post-content .entry-meta .post-cat a {
+  text-decoration: none;
+}
