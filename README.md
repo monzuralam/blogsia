@@ -6,7 +6,7 @@
 Summary:           |Blogsia
 -------------------|----------------
 Contributors:      | [monzuralam](https://profiles.wordpress.org/mrpauloen/)
-Version:           | 1.0.1
+Version:           | 1.0.3
 Requires at least: | 5.5
 Tested up to:      | 6.0
 Requires PHP:  	   | 7.0
@@ -95,5 +95,5 @@ https://wordpress.org/support/theme/blogsia
 
 ## Changelog
 
-### 1.0.1
+### 1.0.3
 *Initial Release*
