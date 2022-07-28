@@ -1,6 +1,6 @@
 # Blogsia
 
-> Blogsia is a simle blog theme built with Bootstrap.
+> Blogsia is a lightweight WordPress theme built with a focus on speed and usability.
 
 
 Summary:           |Blogsia
@@ -13,6 +13,7 @@ Requires PHP:  	   | 7.0
 License:           | GPLv2 or later
 License URI:       | http://www.gnu.org/licenses/gpl-2.0.html
 Tags:              | two-columns, custom-menu, custom-background, right-sidebar, custom-header, featured-images, threaded-comments, translation-ready, blog
+Download           | [Blogsia](https://downloads.wordpress.org/theme/blogsia.1.0.3.zip)
 
 ## Description
 
